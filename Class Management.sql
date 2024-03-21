@@ -8,7 +8,6 @@ CREATE TABLE Class (
     ClassName NVARCHAR(50),
     ClassStartDate DATE,
     ClassEndDate DATE,
-    Schedule NVARCHAR(50),
 	ClassStatus INT,
 );
 
@@ -55,12 +54,60 @@ CREATE TABLE Payment (
     FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
 );
 
--- Sample data for Class table
-INSERT INTO Class (ClassID, ClassName, ClassStartDate, ClassEndDate, Schedule, ClassStatus)
+CREATE TABLE DayOfWeek (
+    DayOfWeekID INT PRIMARY KEY,
+    DayName NVARCHAR(20)
+);
+
+CREATE TABLE TimeOfDay (
+    TimeOfDayID INT PRIMARY KEY,
+    TimeSlot NVARCHAR(50)
+);
+
+CREATE TABLE ClassSchedule (
+    ClassID INT,
+    DayOfWeekID INT,
+    TimeOfDayID INT,
+    FOREIGN KEY (ClassID) REFERENCES Class(ClassID),
+    FOREIGN KEY (DayOfWeekID) REFERENCES DayOfWeek(DayOfWeekID),
+    FOREIGN KEY (TimeOfDayID) REFERENCES TimeOfDay(TimeOfDayID),
+    PRIMARY KEY (ClassID, DayOfWeekID, TimeOfDayID)
+);
+
+-- Sample data for DayOfWeek table
+INSERT INTO DayOfWeek (DayOfWeekID, DayName)
 VALUES
-    (1, 'Mathematics 101', '2024-03-01', '2024-06-01', 'Monday/Wednesday/Friday 9:00-10:30', 1),
-    (2, 'English Literature', '2024-03-05', '2024-05-30', 'Tuesday/Thursday 11:00-12:30', 1),
-    (3, 'Computer Science Basics', '2024-03-10', '2024-05-25', 'Monday/Wednesday 13:00-14:30', 1);
+    (1, 'Monday'),
+    (2, 'Tuesday'),
+    (3, 'Wednesday'),
+    (4, 'Thursday'),
+    (5, 'Friday');
+
+-- Sample data for TimeOfDay table
+INSERT INTO TimeOfDay (TimeOfDayID, TimeSlot)
+VALUES
+    (1, '9:00-10:30'),
+    (2, '11:00-12:30'),
+    (3, '13:00-14:30');
+
+-- Sample data for ClassSchedule table
+INSERT INTO ClassSchedule (ClassID, DayOfWeekID, TimeOfDayID)
+VALUES
+    (1, 1, 1), -- Monday, 9:00-10:30
+    (1, 3, 1), -- Wednesday, 9:00-10:30
+    (1, 5, 1), -- Friday, 9:00-10:30
+    (2, 2, 2), -- Tuesday, 11:00-12:30
+    (2, 4, 2), -- Thursday, 11:00-12:30
+    (3, 1, 3), -- Monday, 13:00-14:30
+    (3, 3, 3); -- Wednesday, 13:00-14:30
+
+
+-- Sample data for Class table
+INSERT INTO Class (ClassID, ClassName, ClassStartDate, ClassEndDate, ClassStatus)
+VALUES
+    (1, 'Mathematics 101', '2024-03-01', '2024-06-01', 1),
+    (2, 'English Literature', '2024-03-05', '2024-05-30', 1),
+    (3, 'Computer Science Basics', '2024-03-10', '2024-05-25', 1);
 
 -- Sample data for Student table
 INSERT INTO Student (StudentID, FullName, DateOfBirth, Gender, ContactInfo)
