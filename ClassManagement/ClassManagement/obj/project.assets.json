@@ -3390,11 +3390,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dung\\Desktop\\ClassManagement\\ClassManagement\\ClassManagement.csproj",
+      "projectUniqueName": "C:\\Users\\Dung\\Desktop\\class-management\\ClassManagement\\ClassManagement\\ClassManagement.csproj",
       "projectName": "ClassManagement",
-      "projectPath": "C:\\Users\\Dung\\Desktop\\ClassManagement\\ClassManagement\\ClassManagement.csproj",
+      "projectPath": "C:\\Users\\Dung\\Desktop\\class-management\\ClassManagement\\ClassManagement\\ClassManagement.csproj",
       "packagesPath": "C:\\Users\\Dung\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dung\\Desktop\\ClassManagement\\ClassManagement\\obj\\",
+      "outputPath": "C:\\Users\\Dung\\Desktop\\class-management\\ClassManagement\\ClassManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dung\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "So/Oa3yvEeuad8F8H7YpiMsbacMKAPbax9VeUqBn9sQZyOAMiklGZBuVYLiEJLpyYtgIggcHO/1Ie1kxRLd+gA==",
+  "dgSpecHash": "viRnK6TWE4namZguwobtC2/i9KSVMb6Rb+G5ScY8Qhchq7T/+WoMQXcZsGztrJBKSaB6RuBXBQvfS4uQRudAvA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dung\\Desktop\\ClassManagement\\ClassManagement\\ClassManagement.csproj",
+  "projectFilePath": "C:\\Users\\Dung\\Desktop\\class-management\\ClassManagement\\ClassManagement\\ClassManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dung\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Dung\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

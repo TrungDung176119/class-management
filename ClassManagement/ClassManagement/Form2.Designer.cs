@@ -37,13 +37,14 @@
             txtSearchClassName = new TextBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            btnDelete = new Button();
             btnEdit = new Button();
             btnAdd = new Button();
             btnRefresh = new Button();
             cboStatus = new ComboBox();
-            dateTimePicker2 = new DateTimePicker();
+            dtpEndDate = new DateTimePicker();
             dtpStartDate = new DateTimePicker();
-            textBox6 = new TextBox();
+            txtSchedule = new TextBox();
             txtClassName = new TextBox();
             label8 = new Label();
             label7 = new Label();
@@ -83,6 +84,7 @@
             cboSearchStatus.Name = "cboSearchStatus";
             cboSearchStatus.Size = new Size(151, 28);
             cboSearchStatus.TabIndex = 5;
+            cboSearchStatus.SelectedIndexChanged += cboSearchStatus_SelectedIndexChanged;
             // 
             // txtSearchSchedule
             // 
@@ -90,6 +92,7 @@
             txtSearchSchedule.Name = "txtSearchSchedule";
             txtSearchSchedule.Size = new Size(205, 27);
             txtSearchSchedule.TabIndex = 4;
+            txtSearchSchedule.TextChanged += txtSearchSchedule_TextChanged;
             // 
             // label3
             // 
@@ -115,6 +118,7 @@
             txtSearchClassName.Name = "txtSearchClassName";
             txtSearchClassName.Size = new Size(205, 27);
             txtSearchClassName.TabIndex = 1;
+            txtSearchClassName.TextChanged += txtSearchClassName_TextChanged;
             // 
             // label1
             // 
@@ -127,13 +131,14 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(btnDelete);
             groupBox2.Controls.Add(btnEdit);
             groupBox2.Controls.Add(btnAdd);
             groupBox2.Controls.Add(btnRefresh);
             groupBox2.Controls.Add(cboStatus);
-            groupBox2.Controls.Add(dateTimePicker2);
+            groupBox2.Controls.Add(dtpEndDate);
             groupBox2.Controls.Add(dtpStartDate);
-            groupBox2.Controls.Add(textBox6);
+            groupBox2.Controls.Add(txtSchedule);
             groupBox2.Controls.Add(txtClassName);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
@@ -142,10 +147,19 @@
             groupBox2.Controls.Add(label4);
             groupBox2.Location = new Point(12, 121);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(380, 477);
+            groupBox2.Size = new Size(380, 537);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Class Management ";
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(134, 474);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 29);
+            btnDelete.TabIndex = 16;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
@@ -164,6 +178,7 @@
             btnAdd.TabIndex = 14;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnRefresh
             // 
@@ -173,6 +188,7 @@
             btnRefresh.TabIndex = 13;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // cboStatus
             // 
@@ -183,12 +199,12 @@
             cboStatus.Size = new Size(250, 28);
             cboStatus.TabIndex = 6;
             // 
-            // dateTimePicker2
+            // dtpEndDate
             // 
-            dateTimePicker2.Location = new Point(108, 188);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 27);
-            dateTimePicker2.TabIndex = 12;
+            dtpEndDate.Location = new Point(108, 188);
+            dtpEndDate.Name = "dtpEndDate";
+            dtpEndDate.Size = new Size(250, 27);
+            dtpEndDate.TabIndex = 12;
             // 
             // dtpStartDate
             // 
@@ -197,12 +213,12 @@
             dtpStartDate.Size = new Size(250, 27);
             dtpStartDate.TabIndex = 6;
             // 
-            // textBox6
+            // txtSchedule
             // 
-            textBox6.Location = new Point(108, 255);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(250, 27);
-            textBox6.TabIndex = 11;
+            txtSchedule.Location = new Point(108, 255);
+            txtSchedule.Name = "txtSchedule";
+            txtSchedule.Size = new Size(250, 27);
+            txtSchedule.TabIndex = 11;
             // 
             // txtClassName
             // 
@@ -263,14 +279,15 @@
             dgvClass.Name = "dgvClass";
             dgvClass.RowHeadersWidth = 51;
             dgvClass.RowTemplate.Height = 29;
-            dgvClass.Size = new Size(882, 477);
+            dgvClass.Size = new Size(882, 537);
             dgvClass.TabIndex = 2;
+            dgvClass.SelectionChanged += dgvClass_SelectionChanged;
             // 
             // frmClass
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1334, 623);
+            ClientSize = new Size(1334, 670);
             Controls.Add(dgvClass);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -300,7 +317,7 @@
         private TextBox txtSearchSchedule;
         private ComboBox cboSearchStatus;
         private DateTimePicker dtpStartDate;
-        private TextBox textBox6;
+        private TextBox txtSchedule;
         private TextBox txtClassName;
         private Label label8;
         private Label label7;
@@ -309,9 +326,10 @@
         private Label label4;
         private BindingSource bindingSource2;
         private ComboBox cboStatus;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dtpEndDate;
         private Button btnEdit;
         private Button btnAdd;
         private Button btnRefresh;
+        private Button btnDelete;
     }
 }
