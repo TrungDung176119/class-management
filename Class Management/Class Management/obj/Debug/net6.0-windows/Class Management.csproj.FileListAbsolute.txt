@@ -80,3 +80,86 @@ C:\Users\Dung\Desktop\class-management\Class Management\Class Management\bin\Deb
 C:\Users\Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\appsettings.json
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Class Management.exe
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\appsettings.json
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Class Management.deps.json
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Class Management.runtimeconfig.json
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Class Management.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Class Management.pdb
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Azure.Core.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Azure.Identity.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Humanizer.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\Mono.TextTemplating.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\System.Memory.Data.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win-x64\native\msalruntime.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.csproj.AssemblyReference.cache
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class_Management.Form1.resources
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class_Management.frmClass.resources
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.csproj.GenerateResource.cache
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.AssemblyInfoInputs.cache
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.AssemblyInfo.cs
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.csproj.CoreCompileInputs.cache
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.sourcelink.json
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.csproj.CopyComplete
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\refint\Class Management.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.pdb
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.genruntimeconfig.cache
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\ref\Class Management.dll
+C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class_Management.frmStudent.resources

@@ -33,10 +33,12 @@ public partial class ClassManagementContext : DbContext
     public virtual DbSet<TimeOfDay> TimeOfDays { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer(new ConfigurationBuilder()
+    {
+        optionsBuilder.UseSqlServer(new ConfigurationBuilder()
         .SetBasePath(Directory.GetCurrentDirectory())
         .AddJsonFile("appsettings.json", true, true)
         .Build().GetConnectionString("MyExam"));
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

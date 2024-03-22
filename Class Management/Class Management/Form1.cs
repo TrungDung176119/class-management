@@ -12,5 +12,11 @@ namespace Class_Management
             frmClass ClassManagement = new frmClass();
             ClassManagement.Show();
         }
+
+        private void mnuStudent_Click(object sender, EventArgs e)
+        {
+            frmStudent StudentManagement = new frmStudent();
+            StudentManagement.Show();
+        }
     }
 }

@@ -94,6 +94,13 @@ VALUES
 	('17:00-19:00'),
 	('19:30-21:30');
 
+	-- Sample data for Class table
+INSERT INTO Class (ClassName, ClassStartDate, ClassEndDate, ClassStatus)
+VALUES
+    ('Mathematics 101', '2024-03-01', '2024-06-01', 1),
+    ('English Literature', '2024-03-05', '2024-05-30', 1),
+    ('Computer Science Basics', '2024-03-10', '2024-05-25', 1);
+
 -- Sample data for ClassSchedule table
 INSERT INTO ClassSchedule (ClassID, DayOfWeekID, TimeOfDayID)
 VALUES
@@ -101,12 +108,6 @@ VALUES
     (2, 3, 1), -- Wednesday, 9:00-10:30
     (3, 5, 1); -- Friday, 9:00-10:30
 
--- Sample data for Class table
-INSERT INTO Class (ClassName, ClassStartDate, ClassEndDate, ClassStatus)
-VALUES
-    ('Mathematics 101', '2024-03-01', '2024-06-01', 1),
-    ('English Literature', '2024-03-05', '2024-05-30', 1),
-    ('Computer Science Basics', '2024-03-10', '2024-05-25', 1);
 
 -- Sample data for Student table
 INSERT INTO Student (FullName, DateOfBirth, Gender, ContactInfo)

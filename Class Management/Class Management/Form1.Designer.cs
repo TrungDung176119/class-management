@@ -75,6 +75,7 @@
             mnuStudent.Name = "mnuStudent";
             mnuStudent.Size = new Size(224, 26);
             mnuStudent.Text = "Student";
+            mnuStudent.Click += mnuStudent_Click;
             // 
             // mnuMark
             // 
