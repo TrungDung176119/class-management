@@ -3,36 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form6.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form6.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form5.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form5.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\models\\mark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\models\\mark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\models\\classmanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\models\\classmanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\models\\dayofweek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\models\\dayofweek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|c:\\users\\dung\\desktop\\class-management\\class management\\class management\\models\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEB138F3-4741-4F24-97B3-BBAC6F50BE25}|Class Management\\Class Management.csproj|solutionrelative:class management\\models\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,100 +74,194 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form3.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form3.cs",
-              "RelativeDocumentMoniker": "Class Management\\Form3.cs",
-              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form3.cs [Design]",
-              "RelativeToolTip": "Class Management\\Form3.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "Form6.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form6.cs",
+              "RelativeDocumentMoniker": "Class Management\\Form6.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form6.cs [Design]",
+              "RelativeToolTip": "Class Management\\Form6.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T04:25:54.638Z",
+              "WhenOpened": "2024-03-22T18:21:33.353Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form2.cs",
-              "RelativeDocumentMoniker": "Class Management\\Form2.cs",
-              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form2.cs",
-              "RelativeToolTip": "Class Management\\Form2.cs",
-              "ViewState": "AQIAANAAAAAAAAAAAADwvzQBAAABAAAA",
+              "Title": "Form6.cs",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form6.cs",
+              "RelativeDocumentMoniker": "Class Management\\Form6.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form6.cs",
+              "RelativeToolTip": "Class Management\\Form6.cs",
+              "ViewState": "AQIAAMwAAAAAAAAAAAAhwOAAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T02:44:16.074Z",
+              "WhenOpened": "2024-03-22T16:52:38.934Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Form2.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form2.Designer.cs",
-              "RelativeDocumentMoniker": "Class Management\\Form2.Designer.cs",
-              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form2.Designer.cs",
-              "RelativeToolTip": "Class Management\\Form2.Designer.cs",
-              "ViewState": "AQIAAEMBAAAAAAAAAAAAAF0BAAAgAAAA",
+              "Title": "Form4.cs",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form4.cs",
+              "RelativeDocumentMoniker": "Class Management\\Form4.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form4.cs",
+              "RelativeToolTip": "Class Management\\Form4.cs",
+              "ViewState": "AQIAALEAAAAAAAAAAAA4wHcAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T02:43:30.119Z"
+              "WhenOpened": "2024-03-22T16:24:46.394Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "Form3.cs",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form3.cs",
+              "RelativeDocumentMoniker": "Class Management\\Form3.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form3.cs",
+              "RelativeToolTip": "Class Management\\Form3.cs",
+              "ViewState": "AQIAAL4AAAAAAAAAAAAwwHkAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T16:24:34.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form1.cs",
               "RelativeDocumentMoniker": "Class Management\\Form1.cs",
               "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form1.cs",
               "RelativeToolTip": "Class Management\\Form1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAjAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T02:42:12.379Z"
+              "WhenOpened": "2024-03-22T16:16:52.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form1.cs",
+              "RelativeDocumentMoniker": "Class Management\\Form1.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form1.cs [Design]",
+              "RelativeToolTip": "Class Management\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T16:16:47.421Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form5.cs",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form5.cs",
+              "RelativeDocumentMoniker": "Class Management\\Form5.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form5.cs",
+              "RelativeToolTip": "Class Management\\Form5.cs",
+              "ViewState": "AQIAAJoAAAAAAAAAAADwv6gAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T16:14:41.226Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ClassManagementContext.cs",
-              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\ClassManagementContext.cs",
-              "RelativeDocumentMoniker": "Class Management\\Models\\ClassManagementContext.cs",
-              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\ClassManagementContext.cs",
-              "RelativeToolTip": "Class Management\\Models\\ClassManagementContext.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAiwCIAAABRAAAA",
+              "Title": "Form5.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form5.cs",
+              "RelativeDocumentMoniker": "Class Management\\Form5.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form5.cs [Design]",
+              "RelativeToolTip": "Class Management\\Form5.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T02:39:13.003Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form2.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form2.cs",
-              "RelativeDocumentMoniker": "Class Management\\Form2.cs",
-              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form2.cs [Design]",
-              "RelativeToolTip": "Class Management\\Form2.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T02:42:46.3Z",
+              "WhenOpened": "2024-03-22T15:45:47.289Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "DayOfWeek.cs",
-              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\DayOfWeek.cs",
-              "RelativeDocumentMoniker": "Class Management\\Models\\DayOfWeek.cs",
-              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\DayOfWeek.cs",
-              "RelativeToolTip": "Class Management\\Models\\DayOfWeek.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Form6.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form6.Designer.cs",
+              "RelativeDocumentMoniker": "Class Management\\Form6.Designer.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form6.Designer.cs",
+              "RelativeToolTip": "Class Management\\Form6.Designer.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwCcBAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T02:59:35.317Z"
+              "WhenOpened": "2024-03-22T17:01:04.831Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\appsettings.json",
-              "RelativeDocumentMoniker": "Class Management\\appsettings.json",
-              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\appsettings.json",
-              "RelativeToolTip": "Class Management\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-22T02:38:12.058Z"
+              "DocumentIndex": 9,
+              "Title": "Form5.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form5.Designer.cs",
+              "RelativeDocumentMoniker": "Class Management\\Form5.Designer.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form5.Designer.cs",
+              "RelativeToolTip": "Class Management\\Form5.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0BAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T16:08:02.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Mark.cs",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\Mark.cs",
+              "RelativeDocumentMoniker": "Class Management\\Models\\Mark.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\Mark.cs",
+              "RelativeToolTip": "Class Management\\Models\\Mark.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T15:16:42.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form4.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form4.cs",
+              "RelativeDocumentMoniker": "Class Management\\Form4.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Form4.cs [Design]",
+              "RelativeToolTip": "Class Management\\Form4.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T14:54:50.233Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ClassManagementContext.cs",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\ClassManagementContext.cs",
+              "RelativeDocumentMoniker": "Class Management\\Models\\ClassManagementContext.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\ClassManagementContext.cs",
+              "RelativeToolTip": "Class Management\\Models\\ClassManagementContext.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAALIAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T15:02:21.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Attendance.cs",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\Attendance.cs",
+              "RelativeDocumentMoniker": "Class Management\\Models\\Attendance.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\Attendance.cs",
+              "RelativeToolTip": "Class Management\\Models\\Attendance.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T15:02:18.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Class.cs",
+              "DocumentMoniker": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\Class.cs",
+              "RelativeDocumentMoniker": "Class Management\\Models\\Class.cs",
+              "ToolTip": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Models\\Class.cs",
+              "RelativeToolTip": "Class Management\\Models\\Class.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T15:02:10.82Z",
+              "EditorCaption": ""
             }
           ]
         }

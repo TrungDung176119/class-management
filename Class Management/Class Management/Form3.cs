@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace Class_Management
@@ -114,11 +115,11 @@ namespace Class_Management
                 MessageBox.Show("Please select a student to edit.");
                 return;
             }
-            int studentID = Convert.ToInt32(dgvStudent.SelectedRows[0].Cells["ID"].Value);
+            int studentId = Convert.ToInt32(dgvStudent.SelectedRows[0].Cells["StudentId"].Value);
 
             string name = txtName.Text;
             DateTime dateOfBirth = dtpDOB.Value.Date;
-            string gender = cboGender.SelectedIndex == 0 ? "Male": "Female"; // Selected Day of Week
+            string gender = cboGender.SelectedIndex == 0 ? "Male" : "Female"; // Selected Day of Week
             string contactInfo = txtContactInfo.Text;
 
             // Validate input data
@@ -127,10 +128,55 @@ namespace Class_Management
                 MessageBox.Show("Please fill in all required fields.");
                 return;
             }
+            Student studentToEdit = _context.Students.FirstOrDefault(c => c.StudentId == studentId);
+            if (studentToEdit == null)
+            {
+                MessageBox.Show("Student not found.");
+                return;
+            }
+            // Update class information
+            studentToEdit.FullName = name;
+            studentToEdit.DateOfBirth = dateOfBirth;
+            studentToEdit.Gender = gender;
+            studentToEdit.ContactInfo = contactInfo;
+
+            _context.SaveChanges();
+
+            LoadStudents();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (dgvStudent.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a student to delete.");
+                return;
+            }
+            int studentID = Convert.ToInt32(dgvStudent.SelectedRows[0].Cells["StudentId"].Value);
+
+            // Retrieve the student from the database context
+            var studentToDelete = _context.Students.FirstOrDefault(s => s.StudentId == studentID); DialogResult result = MessageBox.Show("Are you sure you want to delete this student?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            if (studentToDelete == null)
+            {
+                MessageBox.Show("Student not found.");
+                return;
+            }
+            // Remove the student from the database context
+            _context.Students.Remove(studentToDelete);
+
+            // Save changes to the database
+            _context.SaveChanges();
+
+            // Refresh the DataGridView to reflect the changes
+            LoadStudents();
+
+            MessageBox.Show("Student deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
 
         }
 

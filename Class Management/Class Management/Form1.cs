@@ -18,5 +18,23 @@ namespace Class_Management
             frmStudent StudentManagement = new frmStudent();
             StudentManagement.Show();
         }
+
+        private void mnuMark_Click(object sender, EventArgs e)
+        {
+            frmMark MarkManagement = new frmMark();
+            MarkManagement.Show();
+        }
+
+        private void mnuAttendance_Click(object sender, EventArgs e)
+        {
+            frmAttendance Attendance = new frmAttendance();
+            Attendance.Show();
+        }
+
+        private void mnuPayment_Click(object sender, EventArgs e)
+        {
+            frmPayment Payment = new frmPayment();
+            Payment.Show();
+        }
     }
 }

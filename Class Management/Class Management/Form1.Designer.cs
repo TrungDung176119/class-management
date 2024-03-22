@@ -82,18 +82,21 @@
             mnuMark.Name = "mnuMark";
             mnuMark.Size = new Size(224, 26);
             mnuMark.Text = "Mark";
+            mnuMark.Click += mnuMark_Click;
             // 
             // mnuPayment
             // 
             mnuPayment.Name = "mnuPayment";
             mnuPayment.Size = new Size(224, 26);
             mnuPayment.Text = "Payment";
+            mnuPayment.Click += mnuPayment_Click;
             // 
             // mnuAttendance
             // 
             mnuAttendance.Name = "mnuAttendance";
             mnuAttendance.Size = new Size(99, 24);
             mnuAttendance.Text = "Attendance";
+            mnuAttendance.Click += mnuAttendance_Click;
             // 
             // mnuHelp
             // 

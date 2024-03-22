@@ -3385,19 +3385,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Trung Dung\\.nuget\\packages\\": {}
+    "C:\\Users\\Dung\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Trung Dung\\Desktop\\class-management\\Class Management\\Class Management\\Class Management.csproj",
+      "projectUniqueName": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Class Management.csproj",
       "projectName": "Class Management",
-      "projectPath": "C:\\Users\\Trung Dung\\Desktop\\class-management\\Class Management\\Class Management\\Class Management.csproj",
-      "packagesPath": "C:\\Users\\Trung Dung\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Trung Dung\\Desktop\\class-management\\Class Management\\Class Management\\obj\\",
+      "projectPath": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\Class Management.csproj",
+      "packagesPath": "C:\\Users\\Dung\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dung\\Desktop\\class-management\\Class Management\\Class Management\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Trung Dung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dung\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3417,6 +3417,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3457,7 +3462,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -20,4 +20,5 @@ public partial class Class
     public virtual ICollection<ClassSchedule> ClassSchedules { get; set; } = new List<ClassSchedule>();
 
     public virtual ICollection<Mark> Marks { get; set; } = new List<Mark>();
+
 }

@@ -163,3 +163,7 @@ C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\o
 C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class Management.genruntimeconfig.cache
 C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\ref\Class Management.dll
 C:\Users\Trung Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class_Management.frmStudent.resources
+C:\Users\Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class_Management.frmStudent.resources
+C:\Users\Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class_Management.frmMark.resources
+C:\Users\Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class_Management.frmAttendance.resources
+C:\Users\Dung\Desktop\class-management\Class Management\Class Management\obj\Debug\net6.0-windows\Class_Management.frmPayment.resources
