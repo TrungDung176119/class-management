@@ -16,11 +16,11 @@ namespace Class_Management
 {
     public partial class frmStudent : Form
     {
-        private readonly ClassManagementContext _context;
+        private readonly ClassManagement3Context _context;
         public frmStudent()
         {
             InitializeComponent();
-            _context = new ClassManagementContext();
+            _context = new ClassManagement3Context();
             cboSearchGender.SelectedIndex = 0;
             cboGender.SelectedIndex = 0;
         }
@@ -154,30 +154,41 @@ namespace Class_Management
             }
             int studentID = Convert.ToInt32(dgvStudent.SelectedRows[0].Cells["StudentId"].Value);
 
-            // Retrieve the student from the database context
-            var studentToDelete = _context.Students.FirstOrDefault(s => s.StudentId == studentID); DialogResult result = MessageBox.Show("Are you sure you want to delete this student?", "Confirmation", MessageBoxButtons.YesNo);
-            if (result == DialogResult.No)
-            {
-                return;
-            }
+            var studentToDelete = _context.Students
+                                          .Include(s => s.ClassStudents)
+                                          .FirstOrDefault(s => s.StudentId == studentID);
             if (studentToDelete == null)
             {
                 MessageBox.Show("Student not found.");
                 return;
             }
-            // Remove the student from the database context
+
+            List<string> relatedRecords = new List<string>();
+
+            if (studentToDelete.ClassStudents.Any())
+            {
+                relatedRecords.Add("ClassStudents");
+            }
+
+            if (relatedRecords.Any())
+            {
+                string message = $"The student you are trying to delete has related to the:\n\n";
+                foreach (string record in relatedRecords)
+                {
+                    message += $"- {record}\n";
+                }
+                message += "\nYou cannot delete this student until the related records are cleared.";
+                MessageBox.Show(message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             _context.Students.Remove(studentToDelete);
 
-            // Save changes to the database
             _context.SaveChanges();
 
-            // Refresh the DataGridView to reflect the changes
             LoadStudents();
 
             MessageBox.Show("Student deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

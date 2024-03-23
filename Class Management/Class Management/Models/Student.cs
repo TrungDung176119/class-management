@@ -15,9 +15,5 @@ public partial class Student
 
     public string? ContactInfo { get; set; }
 
-    public virtual ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
-
-    public virtual ICollection<Mark> Marks { get; set; } = new List<Mark>();
-
-    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
+    public virtual ICollection<ClassStudent> ClassStudents { get; set; } = new List<ClassStudent>();
 }

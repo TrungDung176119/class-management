@@ -14,11 +14,11 @@ namespace Class_Management
 {
     public partial class frmClass : Form
     {
-        private readonly ClassManagementContext _context;
+        private readonly ClassManagement3Context _context;
         public frmClass()
         {
             InitializeComponent();
-            _context = new ClassManagementContext();
+            _context = new ClassManagement3Context();
 
         }
         private void LoadDayOfWeekValues()

@@ -1,6 +1,6 @@
-Create database ClassManagement
+Create database ClassManagement3
 
-use ClassManagement
+use ClassManagement3
 
 -- Create the Class table
 CREATE TABLE Class (
@@ -20,38 +20,41 @@ CREATE TABLE Student (
 	ContactInfo NVARCHAR(200)
 );
 
+CREATE TABLE CLassStudent (
+    ClassStudentID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	ClassID INT,
+	StudentID INT,
+	FOREIGN KEY (ClassID) REFERENCES Class(ClassID),
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
+);
 -- Create the Attendance table
 CREATE TABLE Attendance (
     AttendanceID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-    ClassID INT,
-    StudentID INT,
+    ClassStudentID INT,
     AttendanceDate DATE,
     AttendanceStatus INT,
-    FOREIGN KEY (ClassID) REFERENCES Class(ClassID),
-    FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
+    FOREIGN KEY (ClassStudentID) REFERENCES ClassStudent(ClassStudentID)
 );
 
 -- Create the Mark table
 CREATE TABLE Mark (
     MarkID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-    ClassID INT,
-    StudentID INT,
+    ClassStudentID INT,
     MarkDate DATE,
     [Subject] VARCHAR(100),
     Mark DECIMAL(5, 2),
-    FOREIGN KEY (ClassID) REFERENCES Class(ClassID),
-    FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
+    FOREIGN KEY (ClassStudentID) REFERENCES ClassStudent(ClassStudentID)
 );
 
 -- Create the Payment table
 CREATE TABLE Payment (
     PaymentID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-    StudentID INT,
+    ClassStudentID INT,
     PaymentDate DATE,
     Amount DECIMAL(10, 2),
     PaymentMethod VARCHAR(50),
 	[PaymentStatus] INT
-    FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
+    FOREIGN KEY (ClassStudentID) REFERENCES ClassStudent(ClassStudentID)
 );
 
 CREATE TABLE [DayOfWeek] (
@@ -116,54 +119,51 @@ VALUES
     ('Jane Smith', '2001-08-20', 'Female', 'jane.smith@example.com, +1987654321'),
     ('Michael Johnson', '1999-11-10', 'Male', 'michael.johnson@example.com, +1654321890');
 
--- Sample data for Attendance table
-INSERT INTO Attendance (ClassID, StudentID, AttendanceDate, AttendanceStatus)
+INSERT INTO CLassStudent(ClassID, StudentID)
 VALUES
-    (1, 1, '2024-03-01', 1),
-    (1, 2, '2024-03-01', 1),
-    (1, 3, '2024-03-01', 0),
-    (1, 1, '2024-03-03', 1),
-    (1, 2, '2024-03-03', 1),
-    (1, 3, '2024-03-03', 1),
-    (2, 1, '2024-03-05', 1),
-    (2, 2, '2024-03-05', 1),
-    (2, 3, '2024-03-05', 0);
+    (1, 1),  -- John Doe enrolled in Mathematics 101
+    (1, 2),  -- Jane Smith enrolled in Mathematics 101
+    (1, 3),  -- Michael Johnson enrolled in Mathematics 101
+    (2, 1),  -- John Doe enrolled in English Literature
+    (2, 2),  -- Jane Smith enrolled in English Literature
+    (2, 3);  -- Michael Johnson enrolled in English Literature
+
+-- Sample data for Attendance table
+INSERT INTO Attendance (ClassStudentID, AttendanceDate, AttendanceStatus)
+VALUES
+    (1, '2024-03-01', 1),
+    (1, '2024-03-01', 1),
+    (1,'2024-03-01', 0),
+    (1,'2024-03-03', 1),
+    (1,'2024-03-03', 1),
+    (1,'2024-03-03', 1),
+    (2,'2024-03-05', 1),
+    (2,'2024-03-05', 1),
+    (2,'2024-03-05', 0);
 
 -- Sample data for Mark table
-INSERT INTO Mark (ClassID, StudentID, MarkDate, [Subject], Mark)
+INSERT INTO Mark (ClassStudentID, MarkDate, [Subject], Mark)
 VALUES
-    (1, 1, '2024-03-15', 'Mathematics', 85),
-    (1, 2, '2024-03-15', 'Mathematics', 90),
-    (1, 3, '2024-03-15', 'Mathematics', 75),
-    (2, 1, '2024-03-15', 'English Literature', 88),
-    (2, 2, '2024-03-15', 'English Literature', 92),
-    (2, 3, '2024-03-15', 'English Literature', 80);
+    (1, '2024-03-15', 'Mathematics', 85),
+    (1, '2024-03-15', 'Mathematics', 90),
+    (1, '2024-03-15', 'Mathematics', 75),
+    (2, '2024-03-15', 'English Literature', 88),
+    (2, '2024-03-15', 'English Literature', 92),
+    (2, '2024-03-15', 'English Literature', 80);
 
 -- Sample data for Payment table
-INSERT INTO Payment (StudentID, PaymentDate, Amount, PaymentMethod, PaymentStatus)
+INSERT INTO Payment (ClassStudentID, PaymentDate, Amount, PaymentMethod, PaymentStatus)
 VALUES
     (1, '2024-03-10', 500, 'Credit Card', 1),
     (2, '2024-03-10', 500, 'PayPal', 1),
     (3, '2024-03-10', 500, 'Bank Transfer', 0);
 
-INSERT INTO Attendance (ClassID, StudentID, AttendanceDate, AttendanceStatus)
-VALUES
-    (1, 1, '2024-03-01', 1),
-    (1, 1, '2024-03-01', 1),
-    (1, 1, '2024-03-01', 1),
-    (1, 1, '2024-03-01', 1),
-    (1, 1, '2024-03-01', 1),
-    (1, 1, '2024-03-01', 1),
-    (1, 1, '2024-03-01', 1),
-    (1, 1, '2024-03-01', 1),
-    (1, 1, '2024-03-01', 1),
-    (1, 1, '2024-03-01', 1),
-    -- Add more if needed
-    (1, 2, '2024-03-01', 1),
-    (1, 3, '2024-03-01', 0),
-    (1, 1, '2024-03-03', 1),
-    (1, 2, '2024-03-03', 1),
-    (1, 3, '2024-03-03', 1),
-    (2, 1, '2024-03-05', 1),
-    (2, 2, '2024-03-05', 1),
-    (2, 3, '2024-03-05', 0);
+SELECT 
+    cs.[StudentID],
+    COUNT(a.[AttendanceID]) AS AttendanceCount
+FROM 
+    [dbo].[Attendance] a
+INNER JOIN 
+    [dbo].[ClassStudent] cs ON a.[ClassStudentID] = cs.[ClassStudentID]
+GROUP BY 
+    cs.[StudentID]

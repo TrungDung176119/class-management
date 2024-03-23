@@ -7,7 +7,7 @@ public partial class Payment
 {
     public int PaymentId { get; set; }
 
-    public int? StudentId { get; set; }
+    public int? ClassStudentId { get; set; }
 
     public DateTime? PaymentDate { get; set; }
 
@@ -17,5 +17,5 @@ public partial class Payment
 
     public int? PaymentStatus { get; set; }
 
-    public virtual Student? Student { get; set; }
+    public virtual ClassStudent? ClassStudent { get; set; }
 }

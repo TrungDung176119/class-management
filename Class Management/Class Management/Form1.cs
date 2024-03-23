@@ -36,5 +36,11 @@ namespace Class_Management
             frmPayment Payment = new frmPayment();
             Payment.Show();
         }
+
+        private void mnuClassAndStudent_Click(object sender, EventArgs e)
+        {
+            frmClassStudent ClassAndStudentManagement = new frmClassStudent();
+            ClassAndStudentManagement.Show();
+        }
     }
 }

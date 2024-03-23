@@ -38,6 +38,8 @@
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            cboStudentName = new ComboBox();
+            cboClassName = new ComboBox();
             dtpMarkDate = new DateTimePicker();
             nudMark = new NumericUpDown();
             txtSubject = new TextBox();
@@ -51,8 +53,6 @@
             label5 = new Label();
             label7 = new Label();
             dgvMark = new DataGridView();
-            cboClassName = new ComboBox();
-            cboStudentName = new ComboBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudMark).BeginInit();
@@ -166,6 +166,23 @@
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Mark Management";
+            // 
+            // cboStudentName
+            // 
+            cboStudentName.FormattingEnabled = true;
+            cboStudentName.Location = new Point(147, 104);
+            cboStudentName.Name = "cboStudentName";
+            cboStudentName.Size = new Size(151, 28);
+            cboStudentName.TabIndex = 19;
+            // 
+            // cboClassName
+            // 
+            cboClassName.FormattingEnabled = true;
+            cboClassName.Location = new Point(145, 54);
+            cboClassName.Name = "cboClassName";
+            cboClassName.Size = new Size(151, 28);
+            cboClassName.TabIndex = 18;
+            cboClassName.SelectedIndexChanged += cboClassName_SelectedIndexChanged;
             // 
             // dtpMarkDate
             // 
@@ -284,22 +301,6 @@
             dgvMark.Size = new Size(643, 426);
             dgvMark.TabIndex = 2;
             dgvMark.SelectionChanged += dgvMark_SelectionChanged;
-            // 
-            // cboClassName
-            // 
-            cboClassName.FormattingEnabled = true;
-            cboClassName.Location = new Point(145, 54);
-            cboClassName.Name = "cboClassName";
-            cboClassName.Size = new Size(151, 28);
-            cboClassName.TabIndex = 18;
-            // 
-            // cboStudentName
-            // 
-            cboStudentName.FormattingEnabled = true;
-            cboStudentName.Location = new Point(147, 104);
-            cboStudentName.Name = "cboStudentName";
-            cboStudentName.Size = new Size(151, 28);
-            cboStudentName.TabIndex = 19;
             // 
             // frmMark
             // 

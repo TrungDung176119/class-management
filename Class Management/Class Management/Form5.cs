@@ -14,13 +14,13 @@ namespace Class_Management
 {
     public partial class frmAttendance : Form
     {
-        private readonly ClassManagementContext _context;
+        private readonly ClassManagement3Context _context;
         private List<Class> _classes;
         private List<Student> _students;
         public frmAttendance()
         {
             InitializeComponent();
-            _context = new ClassManagementContext();
+            _context = new ClassManagement3Context();
             LoadClassComboBox();
             LoadStudentComboBox();
             cboSearchStatus.SelectedIndex = 0;
@@ -34,26 +34,53 @@ namespace Class_Management
             cboClassName.DataSource = _classes;
         }
 
+
         private void LoadStudentComboBox()
         {
-            _students = _context.Students.ToList();
-            cboStudentName.DisplayMember = "FullName";
-            cboStudentName.DataSource = _students;
-        }
+            // Temporarily clear the data source to avoid errors
+            cboStudentName.DataSource = null;
 
+            // Get the selected class from cboClassName
+            Class selectedClass = cboClassName.SelectedItem as Class;
+            if (selectedClass != null)
+            {
+                // Retrieve the students enrolled in the selected class
+                var studentsInClass = _context.ClassStudents
+                    .Where(cs => cs.ClassId == selectedClass.ClassId)
+                    .Select(cs => cs.Student)
+                    .ToList();
+
+                // Add the students to the combobox if there are any
+                if (studentsInClass.Any())
+                {
+                    cboStudentName.DisplayMember = "FullName";
+                    cboStudentName.DataSource = studentsInClass;
+                }
+                else
+                {
+                    // If there are no students enrolled in the class, display a message or handle it accordingly
+                    cboStudentName.Items.Add("No students enrolled");
+                }
+            }
+        }
         private void LoadAttendanceData()
         {
             try
             {
                 // Define the initial query without filters
-                var attendanceQuery = _context.Attendances.Include(a => a.Student).Include(a => a.Class).Select(a => new
-                {
-                    AttendanceId = a.AttendanceId,
-                    ClassName = a.Class.ClassName,
-                    StudentName = a.Student.FullName,
-                    AttendanceDate = a.AttendanceDate,
-                    Status = a.AttendanceStatus == 1 ? "Present" : "Absent"
-                });
+                var attendanceQuery = _context.Attendances
+                    .Include(a => a.ClassStudent)
+                    .ThenInclude(cs => cs.Class)
+                    .Include(a => a.ClassStudent)
+                    .ThenInclude(cs => cs.Student)
+                    .Select(a => new
+                    {
+                        AttendanceId = a.AttendanceId,
+                        ClassName = a.ClassStudent.Class.ClassName,
+                        StudentName = a.ClassStudent.Student.FullName,
+                        AttendanceDate = a.AttendanceDate,
+                        Status = a.AttendanceStatus == 1 ? "Present" : "Absent"
+                    });
 
                 // Apply filters based on ComboBox and TextBox values
                 int selectedStatus = cboSearchStatus.SelectedIndex;
@@ -89,6 +116,7 @@ namespace Class_Management
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
 
         private void frmAttendance_Load(object sender, EventArgs e)
@@ -133,11 +161,23 @@ namespace Class_Management
                 int selectedStatusIndex = cboStatus.SelectedIndex;
                 int attendanceStatus = selectedStatusIndex == 0 ? 1 : 0; // Present: 1, Absent: 0
 
+                // Check if the attendance record already exists for the selected class and student on the selected date
+                bool attendanceExists = _context.Attendances
+                    .Any(a => a.ClassStudent.ClassId == selectedClass.ClassId &&
+                              a.ClassStudent.StudentId == selectedStudent.StudentId &&
+                              a.AttendanceDate == attendanceDate);
+
+                if (attendanceExists)
+                {
+                    MessageBox.Show("Attendance record already exists for the selected class, student, and date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 // Create new attendance record
                 Attendance newAttendance = new Attendance
                 {
-                    ClassId = selectedClass.ClassId,
-                    StudentId = selectedStudent.StudentId,
+                    ClassStudentId = _context.ClassStudents
+                        .FirstOrDefault(cs => cs.ClassId == selectedClass.ClassId && cs.StudentId == selectedStudent.StudentId)?.ClassStudentId,
                     AttendanceDate = attendanceDate,
                     AttendanceStatus = attendanceStatus
                 };
@@ -157,6 +197,7 @@ namespace Class_Management
             }
         }
 
+
         private void dgvAttendance_SelectionChanged(object sender, EventArgs e)
         {
             // Check if there's a selected row
@@ -166,21 +207,63 @@ namespace Class_Management
                 DataGridViewRow selectedRow = dgvAttendance.SelectedRows[0];
 
                 // Retrieve the data from the selected row and populate the controls
-                int attendanceId = Convert.ToInt32(selectedRow.Cells["AttendanceId"].Value);
                 string className = selectedRow.Cells["ClassName"].Value?.ToString() ?? "";
                 string studentName = selectedRow.Cells["StudentName"].Value?.ToString() ?? "";
                 DateTime attendanceDate = Convert.ToDateTime(selectedRow.Cells["AttendanceDate"].Value);
-                string status = Convert.ToString(selectedRow.Cells["Status"].Value);
+                string status = selectedRow.Cells["Status"].Value?.ToString() ?? "";
+                dtpAttendanceDate.Value = attendanceDate;
 
                 // Set the values to the respective ComboBoxes
-                Class selectedClass = _classes.FirstOrDefault(c => c.ClassName == className);
-                Student selectedStudent = _students.FirstOrDefault(s => s.FullName == studentName);
-                cboClassName.SelectedItem = selectedClass;
-                cboStudentName.SelectedItem = selectedStudent;
-                dtpAttendanceDate.Value = attendanceDate;
-                cboStatus.SelectedItem = status == "Present" ? "Present" : "Absent";
+                Class selectedClass = _classes?.FirstOrDefault(c => c.ClassName == className);
+
+                // Set the selected class item of the ComboBox if it's not null
+                if (selectedClass != null)
+                {
+                    cboClassName.SelectedItem = selectedClass;
+
+                    // Retrieve the students enrolled in the selected class
+                    var studentsInClass = _context.ClassStudents
+                        .Include(cs => cs.Student)
+                        .Where(cs => cs.ClassId == selectedClass.ClassId)
+                        .Select(cs => cs.Student)
+                        .ToList();
+
+                    // Populate the student ComboBox
+                    cboStudentName.DisplayMember = "FullName";
+                    cboStudentName.DataSource = studentsInClass;
+
+                    // Find the corresponding student object
+                    Student selectedStudent = studentsInClass?.FirstOrDefault(s => s.FullName == studentName);
+
+                    // Set the selected student item of the ComboBox if it's not null
+                    if (selectedStudent != null)
+                    {
+                        cboStudentName.SelectedItem = selectedStudent;
+                    }
+                    else
+                    {
+                        cboStudentName.SelectedItem = null;
+                    }
+                }
+                else
+                {
+                    cboClassName.SelectedItem = null;
+                    cboClassName.DataSource = null; // Clear the ComboBox data source
+                    cboStudentName.DataSource = null; // Clear the ComboBox data source
+                    cboStudentName.SelectedItem = null;
+                }
+
+                if (status == "Present")
+                {
+                    cboStatus.SelectedItem = "Present";
+                }
+                else
+                {
+                    cboStatus.SelectedItem = "Absent";
+                }
             }
         }
+
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -199,28 +282,30 @@ namespace Class_Management
                     DateTime attendanceDate = Convert.ToDateTime(selectedRow.Cells["AttendanceDate"].Value);
                     string status = Convert.ToString(selectedRow.Cells["Status"].Value);
 
-                    // Get the updated values from the controls
-                    string updatedClassName = cboClassName.SelectedItem.ToString();
-                    string updatedStudentName = cboStudentName.SelectedItem.ToString();
-                    DateTime updatedAttendanceDate = dtpAttendanceDate.Value;
-                    string updatedStatus = cboStatus.SelectedItem.ToString();
-
                     // Validate the selected class and student
-                    if (string.IsNullOrEmpty(updatedClassName) || string.IsNullOrEmpty(updatedStudentName))
+                    if (cboClassName.SelectedItem == null || cboStudentName.SelectedItem == null)
                     {
                         MessageBox.Show("Please select a class and a student.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
+                    // Get the updated values from the controls
+                    Class updatedClass = cboClassName.SelectedItem as Class;
+                    Student updatedStudent = cboStudentName.SelectedItem as Student;
+                    DateTime updatedAttendanceDate = dtpAttendanceDate.Value.Date; // Ensure only date without time
+                    int updatedStatusIndex = cboStatus.SelectedIndex;
+                    int updatedStatus = updatedStatusIndex == 0 ? 1 : 0; // Present: 1, Absent: 0
+
                     // Find the corresponding attendance record in the database
                     Attendance attendanceToUpdate = _context.Attendances.Find(attendanceId);
+
                     if (attendanceToUpdate != null)
                     {
                         // Update the attendance record with the updated values
-                        attendanceToUpdate.ClassId = ((Class)cboClassName.SelectedItem)?.ClassId;
-                        attendanceToUpdate.StudentId = ((Student)cboStudentName.SelectedItem)?.StudentId;
+                        attendanceToUpdate.ClassStudentId = _context.ClassStudents
+                            .FirstOrDefault(cs => cs.ClassId == updatedClass.ClassId && cs.StudentId == updatedStudent.StudentId)?.ClassStudentId;
                         attendanceToUpdate.AttendanceDate = updatedAttendanceDate;
-                        attendanceToUpdate.AttendanceStatus = updatedStatus == "Present" ? 1 : 0;
+                        attendanceToUpdate.AttendanceStatus = updatedStatus;
 
                         // Save changes to the database
                         _context.SaveChanges();
@@ -246,6 +331,7 @@ namespace Class_Management
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -292,6 +378,11 @@ namespace Class_Management
             cboStudentName.SelectedIndex = 0; // Clear selected item in cboStudentName
             cboStatus.SelectedIndex = 0; // Clear selected item in cboStatus
             dtpAttendanceDate.Value = DateTime.Today; // Reset dtpAttendanceDate to today's date
+        }
+
+        private void cboClassName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadStudentComboBox();
         }
     }
 }

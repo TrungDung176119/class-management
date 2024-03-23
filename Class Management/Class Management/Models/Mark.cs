@@ -7,9 +7,7 @@ public partial class Mark
 {
     public int MarkId { get; set; }
 
-    public int? ClassId { get; set; }
-
-    public int? StudentId { get; set; }
+    public int? ClassStudentId { get; set; }
 
     public DateTime? MarkDate { get; set; }
 
@@ -17,7 +15,5 @@ public partial class Mark
 
     public decimal? Mark1 { get; set; }
 
-    public virtual Class? Class { get; set; }
-
-    public virtual Student? Student { get; set; }
+    public virtual ClassStudent? ClassStudent { get; set; }
 }

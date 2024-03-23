@@ -13,13 +13,13 @@ namespace Class_Management
 {
     public partial class frmPayment : Form
     {
-        private readonly ClassManagementContext _context;
+        private readonly ClassManagement3Context _context;
         private List<Payment> payments;
         private List<Student> _students;
         public frmPayment()
         {
             InitializeComponent();
-            _context = new ClassManagementContext();
+            _context = new ClassManagement3Context();
             cboSearchStatus.SelectedIndex = 0;
             cboStatus.SelectedIndex = 0;
             LoadMethodComboBox();
@@ -73,25 +73,25 @@ namespace Class_Management
                 }
                 else if (searchStatusIndex == 2)
                 {
-                    // Filter for "Payed"
+                    // Filter for "Paid"
                     filteredPayments = filteredPayments.Where(p => p.PaymentStatus == 1);
                 }
 
                 // Filter by student name if provided
                 if (!string.IsNullOrEmpty(searchStudentName))
                 {
-                    filteredPayments = filteredPayments.Where(p => p.Student.FullName.Contains(searchStudentName));
+                    filteredPayments = filteredPayments.Where(p => p.ClassStudent.Student.FullName.Contains(searchStudentName));
                 }
 
                 // Load the filtered payments into the DataGridView
                 dgvPayment.DataSource = filteredPayments.Select(p => new
                 {
                     p.PaymentId,
-                    StudentName = p.Student.FullName,
+                    StudentName = p.ClassStudent.Student.FullName,
                     p.PaymentDate,
                     p.Amount,
                     p.PaymentMethod,
-                    Status = p.PaymentStatus == 1 ? "Payed" : "Pending",
+                    Status = p.PaymentStatus == 1 ? "Paid" : "Pending",
                 }).ToList();
             }
             catch (Exception ex)
@@ -99,6 +99,7 @@ namespace Class_Management
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
         private void frmPayment_Load(object sender, EventArgs e)
         {
             LoadDataPayment();
@@ -108,22 +109,24 @@ namespace Class_Management
         {
             try
             {
-                // Query to find students with attendance counts divisible by 10
-                var studentsWithDivisibleAttendance = _context.Attendances
-                    .GroupBy(a => a.StudentId)
+                var studentsWithAttendanceCount = _context.Attendances
+                    .Join(_context.ClassStudents,
+                          a => a.ClassStudentId,
+                          cs => cs.ClassStudentId,
+                          (a, cs) => new { a, cs })
+                    .GroupBy(x => x.cs.StudentId)
                     .Select(g => new
                     {
                         StudentID = g.Key,
                         AttendanceCount = g.Count()
                     })
-                    .Where(s => s.AttendanceCount >= 10 && s.AttendanceCount % 10 == 0)
                     .ToList();
 
-                foreach (var student in studentsWithDivisibleAttendance)
+                foreach (var student in studentsWithAttendanceCount)
                 {
                     // Get the last attendance date for the student
                     var lastAttendanceDate = _context.Attendances
-                        .Where(a => a.StudentId == student.StudentID)
+                        .Where(a => a.ClassStudent.StudentId == student.StudentID)
                         .OrderByDescending(a => a.AttendanceDate)
                         .Select(a => a.AttendanceDate)
                         .FirstOrDefault();
@@ -136,25 +139,42 @@ namespace Class_Management
                     {
                         _context.Payments.Add(new Payment
                         {
-                            StudentId = student.StudentID,
+                            ClassStudentId = _context.ClassStudents
+                                .Where(cs => cs.StudentId == student.StudentID)
+                                .Select(cs => cs.ClassStudentId)
+                                .FirstOrDefault(),
                             PaymentDate = lastAttendanceDate,
                             Amount = 500,
                             PaymentMethod = "None",
                             PaymentStatus = 0
                         });
+
+                        // Delete the first 10 attendance records for the student
+                        var first10AttendanceToDelete = _context.Attendances
+                            .Where(a => a.ClassStudent.StudentId == student.StudentID)
+                            .OrderBy(a => a.AttendanceDate)
+                            .Take(10)
+                            .ToList();
+
+                        foreach (var attendance in first10AttendanceToDelete)
+                        {
+                            _context.Attendances.Remove(attendance);
+                        }
                     }
                 }
 
                 // Save changes to the database
                 _context.SaveChanges();
-
-                MessageBox.Show($"Added payment records for {studentsWithDivisibleAttendance.Count} students.");
+                LoadDataPayment();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+
+
 
         private void txtSearchStudentName_TextChanged(object sender, EventArgs e)
         {

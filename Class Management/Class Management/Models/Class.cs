@@ -15,10 +15,7 @@ public partial class Class
 
     public int? ClassStatus { get; set; }
 
-    public virtual ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
-
     public virtual ICollection<ClassSchedule> ClassSchedules { get; set; } = new List<ClassSchedule>();
 
-    public virtual ICollection<Mark> Marks { get; set; } = new List<Mark>();
-
+    public virtual ICollection<ClassStudent> ClassStudents { get; set; } = new List<ClassStudent>();
 }

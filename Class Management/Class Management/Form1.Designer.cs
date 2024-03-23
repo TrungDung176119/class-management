@@ -36,14 +36,14 @@
             mnuMark = new ToolStripMenuItem();
             mnuPayment = new ToolStripMenuItem();
             mnuAttendance = new ToolStripMenuItem();
-            mnuHelp = new ToolStripMenuItem();
+            mnuClassAndStudent = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuFile, mnuManager, mnuAttendance, mnuHelp });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuFile, mnuManager, mnuAttendance, mnuClassAndStudent });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
@@ -66,28 +66,28 @@
             // mnuClass
             // 
             mnuClass.Name = "mnuClass";
-            mnuClass.Size = new Size(224, 26);
+            mnuClass.Size = new Size(148, 26);
             mnuClass.Text = "Class";
             mnuClass.Click += mnuClass_Click;
             // 
             // mnuStudent
             // 
             mnuStudent.Name = "mnuStudent";
-            mnuStudent.Size = new Size(224, 26);
+            mnuStudent.Size = new Size(148, 26);
             mnuStudent.Text = "Student";
             mnuStudent.Click += mnuStudent_Click;
             // 
             // mnuMark
             // 
             mnuMark.Name = "mnuMark";
-            mnuMark.Size = new Size(224, 26);
+            mnuMark.Size = new Size(148, 26);
             mnuMark.Text = "Mark";
             mnuMark.Click += mnuMark_Click;
             // 
             // mnuPayment
             // 
             mnuPayment.Name = "mnuPayment";
-            mnuPayment.Size = new Size(224, 26);
+            mnuPayment.Size = new Size(148, 26);
             mnuPayment.Text = "Payment";
             mnuPayment.Click += mnuPayment_Click;
             // 
@@ -98,11 +98,12 @@
             mnuAttendance.Text = "Attendance";
             mnuAttendance.Click += mnuAttendance_Click;
             // 
-            // mnuHelp
+            // mnuClassAndStudent
             // 
-            mnuHelp.Name = "mnuHelp";
-            mnuHelp.Size = new Size(55, 24);
-            mnuHelp.Text = "Help";
+            mnuClassAndStudent.Name = "mnuClassAndStudent";
+            mnuClassAndStudent.Size = new Size(140, 24);
+            mnuClassAndStudent.Text = "Class and Student";
+            mnuClassAndStudent.Click += mnuClassAndStudent_Click;
             // 
             // Form1
             // 
@@ -129,6 +130,6 @@
         private ToolStripMenuItem mnuMark;
         private ToolStripMenuItem mnuPayment;
         private ToolStripMenuItem mnuAttendance;
-        private ToolStripMenuItem mnuHelp;
+        private ToolStripMenuItem mnuClassAndStudent;
     }
 }

@@ -14,14 +14,14 @@ namespace Class_Management
 {
     public partial class frmMark : Form
     {
-        private readonly ClassManagementContext _context;
+        private readonly ClassManagement3Context _context;
         private DbSet<Mark> _marks;
         private List<Class> _classes;
         private List<Student> _students;
         public frmMark()
         {
             InitializeComponent();
-            _context = new ClassManagementContext();
+            _context = new ClassManagement3Context();
             _marks = _context.Marks;
         }
 
@@ -41,34 +41,63 @@ namespace Class_Management
 
         private void LoadStudentComboBox()
         {
-            _students = _context.Students.ToList();
-            cboStudentName.DisplayMember = "FullName";
-            cboStudentName.DataSource = _students;
+            // Temporarily clear the data source to avoid errors
+            cboStudentName.DataSource = null;
+
+            // Get the selected class from cboClassName
+            Class selectedClass = cboClassName.SelectedItem as Class;
+            if (selectedClass != null)
+            {
+                // Retrieve the students enrolled in the selected class
+                var studentsInClass = _context.ClassStudents
+                    .Where(cs => cs.ClassId == selectedClass.ClassId)
+                    .Select(cs => cs.Student)
+                    .ToList();
+
+                // Add the students to the combobox if there are any
+                if (studentsInClass.Any())
+                {
+                    cboStudentName.DisplayMember = "FullName";
+                    cboStudentName.DataSource = studentsInClass;
+                }
+                else
+                {
+                    // If there are no students enrolled in the class, display a message or handle it accordingly
+                    cboStudentName.Items.Add("No students enrolled");
+                }
+            }
         }
+
+
         private void LoadMarkTable()
         {
             try
             {
-                // Include related entities (Class and Student) in the query
+                // Include related entities (ClassStudent, Class, Student) in the query
                 decimal? markFilter = null;
                 if (!string.IsNullOrEmpty(txtSearchMark.Text) && decimal.TryParse(txtSearchMark.Text, out decimal markValue))
                 {
                     markFilter = markValue;
                 }
 
-                var marksWithDetails = _marks.Include(m => m.Class).Include(m => m.Student).Where(m =>
-                    m.Subject.Contains(txtSearchSubject.Text) &&
-                    m.Class.ClassName.Contains(txtSearchClassName.Text) &&
-                    m.Student.FullName.Contains(txtSearchStudentName.Text) &&
-                    (!markFilter.HasValue || m.Mark1 == markFilter)
-                );
+                var marksWithDetails = _context.Marks
+                    .Include(m => m.ClassStudent)
+                    .ThenInclude(cs => cs.Class)
+                    .Include(m => m.ClassStudent)
+                    .ThenInclude(cs => cs.Student)
+                    .Where(m =>
+                        m.Subject.Contains(txtSearchSubject.Text) &&
+                        m.ClassStudent.Class.ClassName.Contains(txtSearchClassName.Text) &&
+                        m.ClassStudent.Student.FullName.Contains(txtSearchStudentName.Text) &&
+                        (!markFilter.HasValue || m.Mark1 == markFilter)
+                    );
 
                 // Select the required properties and bind the DataGridView to the result
                 dgvMark.DataSource = marksWithDetails.Select(m => new
                 {
                     m.MarkId,
-                    m.Class.ClassName,
-                    StudentName = m.Student.FullName,
+                    ClassName = m.ClassStudent.Class.ClassName,
+                    StudentName = m.ClassStudent.Student.FullName,
                     Mark = m.Mark1,
                     m.MarkDate,
                     m.Subject
@@ -102,7 +131,7 @@ namespace Class_Management
 
         private void dgvMark_SelectionChanged(object sender, EventArgs e)
         {
-            // Check if there's a selected row
+            // Check if there's a selected row and if _classes is initialized
             if (dgvMark.SelectedRows.Count > 0)
             {
                 // Get the selected row
@@ -113,13 +142,45 @@ namespace Class_Management
                 string studentName = selectedRow.Cells["StudentName"].Value?.ToString() ?? "";
                 txtSubject.Text = selectedRow.Cells["Subject"].Value.ToString();
 
-                // Find the corresponding class and student objects
-                Class selectedClass = _classes.FirstOrDefault(c => c.ClassName == className);
-                Student selectedStudent = _students.FirstOrDefault(s => s.FullName == studentName);
+                // Find the corresponding class object
+                Class selectedClass = _classes?.FirstOrDefault(c => c.ClassName == className);
 
-                // Set the selected items of the ComboBoxes
-                cboClassName.SelectedItem = selectedClass;
-                cboStudentName.SelectedItem = selectedStudent;
+                // Set the selected class item of the ComboBox if it's not null
+                if (selectedClass != null)
+                {
+                    cboClassName.SelectedItem = selectedClass;
+
+                    // Retrieve the students enrolled in the selected class
+                    var studentsInClass = _context.ClassStudents
+                        .Include(cs => cs.Student)
+                        .Where(cs => cs.ClassId == selectedClass.ClassId)
+                        .Select(cs => cs.Student)
+                        .ToList();
+
+                    // Populate the student ComboBox
+                    cboStudentName.DisplayMember = "FullName";
+                    cboStudentName.DataSource = studentsInClass;
+
+                    // Find the corresponding student object
+                    Student selectedStudent = studentsInClass?.FirstOrDefault(s => s.FullName == studentName);
+
+                    // Set the selected student item of the ComboBox if it's not null
+                    if (selectedStudent != null)
+                    {
+                        cboStudentName.SelectedItem = selectedStudent;
+                    }
+                    else
+                    {
+                        cboStudentName.SelectedItem = null;
+                    }
+                }
+                else
+                {
+                    cboClassName.SelectedItem = null;
+                    cboStudentName.DataSource = null;
+                    cboStudentName.SelectedItem = null;
+                }
+
 
                 // Check if MarkDate value is not null, then assign it to the DateTimePicker
                 if (selectedRow.Cells["MarkDate"].Value != DBNull.Value)
@@ -146,16 +207,37 @@ namespace Class_Management
         }
 
 
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
+                // Retrieve the selected class and student
+                Class selectedClass = cboClassName.SelectedItem as Class;
+                Student selectedStudent = cboStudentName.SelectedItem as Student;
+
+                // Check if both class and student are selected
+                if (selectedClass == null || selectedStudent == null)
+                {
+                    MessageBox.Show("Please select both a class and a student.");
+                    return;
+                }
+
+                // Create a new ClassStudent object
+                ClassStudent classStudent = _context.ClassStudents.FirstOrDefault(cs =>
+                    cs.ClassId == selectedClass.ClassId && cs.StudentId == selectedStudent.StudentId);
+
+                if (classStudent == null)
+                {
+                    MessageBox.Show("Selected student is not enrolled in the selected class.");
+                    return;
+                }
+
                 // Create a new Mark object and populate its properties
                 Mark newMark = new Mark
                 {
-                    // Retrieve ClassId and StudentId based on the text entered in the text boxes
-                    ClassId = ((Class)cboClassName.SelectedItem)?.ClassId,
-                    StudentId = ((Student)cboStudentName.SelectedItem)?.StudentId,
+                    ClassStudentId = classStudent.ClassStudentId,
                     MarkDate = dtpMarkDate.Value,
                     Subject = txtSubject.Text,
                     Mark1 = nudMark.Value
@@ -175,6 +257,7 @@ namespace Class_Management
             }
         }
 
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             // Check if there's a selected row in the DataGridView
@@ -191,9 +274,29 @@ namespace Class_Management
                     // Find the corresponding Mark object in the DbContext
                     Mark markToUpdate = _context.Marks.Find(markId);
 
-                    // Update the properties of the Mark object with the new values from the text boxes and controls
-                    markToUpdate.ClassId = ((Class)cboClassName.SelectedItem)?.ClassId;
-                    markToUpdate.StudentId = ((Student)cboStudentName.SelectedItem)?.StudentId;
+                    // Retrieve the selected class and student
+                    Class selectedClass = cboClassName.SelectedItem as Class;
+                    Student selectedStudent = cboStudentName.SelectedItem as Student;
+
+                    // Check if both class and student are selected
+                    if (selectedClass == null || selectedStudent == null)
+                    {
+                        MessageBox.Show("Please select both a class and a student.");
+                        return;
+                    }
+
+                    // Retrieve the corresponding ClassStudent object
+                    ClassStudent classStudent = _context.ClassStudents.FirstOrDefault(cs =>
+                        cs.ClassId == selectedClass.ClassId && cs.StudentId == selectedStudent.StudentId);
+
+                    if (classStudent == null)
+                    {
+                        MessageBox.Show("Selected student is not enrolled in the selected class.");
+                        return;
+                    }
+
+                    // Update the properties of the Mark object with the new values from the controls
+                    markToUpdate.ClassStudentId = classStudent.ClassStudentId;
                     markToUpdate.MarkDate = dtpMarkDate.Value;
                     markToUpdate.Subject = txtSubject.Text;
                     markToUpdate.Mark1 = nudMark.Value;
@@ -214,6 +317,7 @@ namespace Class_Management
                 MessageBox.Show("Please select a row to edit.");
             }
         }
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -262,5 +366,18 @@ namespace Class_Management
             dtpMarkDate.Value = DateTime.Today; // Set DateTimePicker value to today's date
             nudMark.Value = 0; // Set NumericUpDown value to 0
         }
+
+        private void cboClassName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Temporarily unsubscribe from the event to prevent retriggering
+            cboClassName.SelectedIndexChanged -= cboClassName_SelectedIndexChanged;
+
+            // Reload student ComboBox
+            LoadStudentComboBox();
+
+            // Re-subscribe to the event
+            cboClassName.SelectedIndexChanged += cboClassName_SelectedIndexChanged;
+        }
+
     }
 }

@@ -225,6 +225,7 @@
             cboClassName.Name = "cboClassName";
             cboClassName.Size = new Size(151, 28);
             cboClassName.TabIndex = 8;
+            cboClassName.SelectedIndexChanged += cboClassName_SelectedIndexChanged;
             // 
             // dtpAttendanceDate
             // 
